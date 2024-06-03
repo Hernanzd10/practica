@@ -61,6 +61,7 @@ function ataqueland() {
 
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1, 3)
+
     if (ataqueAleatorio == 1)
         ataqueEnemigo = 'Fuego'
     else if (ataqueAleatorio == 2)
@@ -69,19 +70,34 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo = 'land'
     }
 
-    createMensaje()
+    combate()
 }
-function createMensaje() {
-    let sectionMensajes = document.getElementById('mensajes')
 
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota ataco con' + ataqueJugador + ', la mascota del enemigo ataco' + ataqueEnemigo + ' - Pendiente'
+function combate() {
+    if(ataqueEnemigo == ataqueJugador) {
+        crearMensaje("EMPATE")
+    } else if(ataqueJugador == 'Fuego' && ataqueEnemigo == 'land') {
+        crearMensaje("GANASTE")
+    } else if(ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego') {
+        crearMensaje("GANASTE")
+    } else if(ataqueJugador == 'land' && ataqueEnemigo == 'Agua') {
+        crearMensaje("GANASTE")
+    } else {
+        crearMensaje("PERDISTE")
+    }
+}
+
+function crearMensaje(resultado) {
+    let sectionMensajes = document.getElementById('mensajes')
     
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '- ' + resultado
+
     sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min) 
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-window.addEventListener("load", iniciarJuego)
+window.addEventListener('load', iniciarJuego)
