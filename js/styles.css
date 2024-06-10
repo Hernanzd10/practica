@@ -1,0 +1,79 @@
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+
+    body {
+        font-family: "Rubik Burned",system-ui;
+        background-image: url(fondo.jpg);
+        background-size:contain ;
+        }
+
+    #seleccionar-mascota {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo {
+        font-size: 60px;
+        color: rgb(255, 255, 255);
+    } 
+
+    .subtitulo  {
+        color: white;
+        font-size: 50px;
+    }
+
+    .tarjetas {
+        display: flex;
+        gap: 80px;
+        color: white;
+    }
+
+    .tarjetas-de-mokepon {
+        width: 120;
+        height: 80;
+        background: #11468F;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .tarjetas-de-mokepon img {
+        width: 80px;
+    }
+
+    #boton-mascota {
+        width: 180px;
+        height: 40px;
+        border-radius: 20px;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 30px;
+    }
+
+    input {
+        display: none;
+    }
+
+    #seleccionar-ataque {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boton-de-ataque {
+        background-color: #ff0000;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        border-color: transparent;
+        width: 180px;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
